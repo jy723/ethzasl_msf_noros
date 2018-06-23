@@ -28,4 +28,7 @@ documentation
 *.wikidoc
 *.cfgc
 cfg/__init__.py
-
+.idea
+3rdparty
+cmake-build-debug
+cmake-build-release

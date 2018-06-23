@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 
+#include <boost/array.hpp>
 #include <boost/shared_ptr.hpp>
 #include <msf_struct/Pose.h>
 namespace geometry_msgs {

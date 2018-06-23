@@ -1,0 +1,88 @@
+%YAML:1.0
+
+rawbuffer: 1
+ekfbuffer: 1
+
+imu_data_txt: /home/sxs/robo/lins/ros/src/ethzasl_msf_noros/dataset/pose_msf/imu.txt
+vicon_data_txt: /home/sxs/robo/lins/ros/src/ethzasl_msf_noros/dataset/pose_msf/vicon.txt
+###########
+## ETHZ_MSF
+###########
+
+## Config for IMU
+core/core_fixed_bias: false
+
+##### INS-D
+## Gyro noise density: 0.004 deg/[sec sqrt(Hz) ]    0.000069813 rad/[sec sqrt(Hz)]
+## Gyro stability: 1 deg/hr                         0.000004848 rad/sec
+###
+## Accel Noise Density: 0.025 mg/sqrt(Hz)           0.00024525 m/s^2/sqrt(Hz)
+## Acc stability: 0.005 mg                          0.000049 m/s^2
+
+
+#core/core_noise_acc: 0.002
+#core/core_noise_accbias: 0.00005
+#core/core_noise_gyr: 0.0008
+#core/core_noise_gyrbias: 0.00005
+
+
+##### ADIS 16490
+## Gyro ARW   0.09 deg/sqrt(hr)
+## Gyro Stab  1.8 deg/hr
+
+## Acc ARW
+## Acc stab   3.6 ug
+
+#core/core_noise_acc: 0.002
+#core/core_noise_accbias: 0.00005
+#core/core_noise_gyr: 0.0008
+#core/core_noise_gyrbias: 0.00005
+
+###### ETHZ VICON DATASET
+core/core_noise_acc: 0.083
+core/core_noise_accbias: 0.0083
+core/core_noise_gyr: 0.0013
+core/core_noise_gyrbias: 0.00013
+
+## Config of msf_app
+msf_app/pose_sensor/pose_noise_scale: 0.0
+msf_app/pose_sensor/pose_noise_p_wv: 0.0
+msf_app/pose_sensor/pose_noise_q_wv: 0.0
+msf_app/pose_sensor/pose_noise_q_ic: 0.0
+msf_app/pose_sensor/pose_noise_p_ic: 0.0
+msf_app/pose_sensor/position_noise_p_ip: 0.0
+msf_app/init/q_ic/w: 1.0
+msf_app/init/q_ic/x: 0.0
+msf_app/init/q_ic/y: 0.0
+msf_app/init/q_ic/z: 0.0
+msf_app/init/p_ic/x: 0.0
+msf_app/init/p_ic/y: 0.0
+msf_app/init/p_ic/z: 0.0
+msf_app/init/p_ip/x: 0.0
+msf_app/init/p_ip/y: 0.0
+msf_app/init/p_ip/z: 0.0
+
+## Config for pose sensor handler
+pose_sensor/pose_fixed_scale: true
+pose_sensor/pose_fixed_p_ic: true
+pose_sensor/pose_fixed_q_ic: true
+pose_sensor/pose_fixed_p_wv: true
+pose_sensor/pose_fixed_q_wv: true
+
+pose_sensor/pose_delay: 0.0
+pose_sensor/pose_noise_meas_p: 0.05
+pose_sensor/pose_noise_meas_q: 0.0005
+
+pose_sensor/pose_absolute_measurements: true
+pose_sensor/pose_measurement_world_sensor: true
+pose_sensor/pose_use_fixed_covariance: true
+pose_sensor/pose_measurement_minimum_dt: 0.05
+
+## Config for position sensor handler
+position_sensor/pose_fixed_p_ip: true
+
+position_sensor/position_noise_meas_p: 0.05
+position_sensor/pose_delay: 0.0
+
+position_sensor/position_absolute_measurements: true
+position_sensor/position_use_fixed_covariance: true
