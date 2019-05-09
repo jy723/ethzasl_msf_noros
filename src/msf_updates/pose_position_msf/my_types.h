@@ -33,6 +33,7 @@ typedef struct IMUMeas_ : public Meas_ {
   Eigen::Vector3d linear_acceleration;
   Eigen::Vector3d angular_velocity;
   virtual int type() const { return IMU; }
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } IMUMeas;
 
 typedef struct VICONMeas_ : public Meas_ {
@@ -40,6 +41,7 @@ typedef struct VICONMeas_ : public Meas_ {
   Eigen::Vector3d p;
   Eigen::Quaterniond q;
   virtual int type() const { return VICON; }
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } VICONMeas;
 
 #endif //ETHZASL_MSF_NOROS_MY_TYPES_H
